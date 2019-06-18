@@ -1,0 +1,117 @@
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+		
+.reveal-modal-bg {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	z-index: 100;
+	display: none;
+	top: 0;
+	left: 0;
+}
+.reveal-modal {
+	visibility: hidden;
+	top: 100px;
+	left: 50%;
+	margin-left: -300px;
+	width: 530px;
+	background: #fff;
+	position: absolute;
+	z-index: 101;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+.reveal-modal.small {
+	width: 200px;
+	margin-left: -140px;
+}
+.reveal-modal.medium {
+	width: 400px;
+	margin-left: -240px;
+}
+.reveal-modal.large {
+	width: 600px;
+	margin-left: -340px;
+}
+.reveal-modal.xlarge {
+	width: 800px;
+	margin-left: -440px;
+}
+
+/**/
+.reveal-modal h1 {
+	margin: 0;
+	padding: 10px 15px 10px 50px;
+	font-size: 16px;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+	color: #ffffff;
+	border-right: 0px;
+	background: url(images/eye.png) no-repeat 5% 50% #171C61;
+	border-radius: 4px 4px 0 0;
+}
+.Parameters {
+	margin-left: 20px;
+}
+.Visible_Parameters, .Hidden_Parameters {
+	float: left;
+	margin: 10px 5px;
+	width: 200px;
+	border: 1px solid #898989;
+}
+.Visible_title, .Hidden_title {
+	padding: 8px 10px;
+	color: #ffffff;
+	background: #125287;
+	font-weight: bold;
+}
+.Visible_text, .Hidden_text {
+	overflow: auto;
+	height: 420px;
+}
+.Visible_text a, .Hidden_text a {
+	text-decoration: none;
+	color: #000;
+	padding-left: 10px;
+	display: block;
+}
+.Visible_text a:hover, .Hidden_text a:hover {
+	background: #d9f1fd;
+}
+.white, .blue {
+	line-height: 26px;
+	border: 1px dotted #ccc;
+}
+.show_hide_icon {
+	float: left;
+	margin-top: 200px;
+	font-size: 10px;
+	text-align: center;
+	line-height: 25px;
+}
+.apply {
+	padding-left: 180px;
+	margin: 10px 0 20px;
+}
+.apply a {
+	padding: 5px 15px;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: solid 1px #9e9e9f;
+	border-right: 0px;
+	border-radius: 5px;
+	background: #151c64;
+}
+.apply a:hover {
+	background: #0a90cd;
+}

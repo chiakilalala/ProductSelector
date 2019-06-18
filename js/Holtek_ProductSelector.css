@@ -1,0 +1,340 @@
+/*舊有CSS*/
+.butn-blue {
+	display: block;
+	cursor: pointer;
+	text-align: center;
+    padding: 10px 25px;
+	font-weight: bold;
+	border: none;
+	color: #fff;
+	font-size: 12px;
+	margin-left: 10px;
+	margin-top: 10px;
+	text-shadow: none;
+	border-radius: 5px;
+	background: #171C61;
+}
+.butn-red {
+	display: block;
+	cursor: pointer;
+	text-align: center;
+    padding: 10px 25px;
+	font-weight: bold;
+	border: none;
+	color: #fff;
+	font-size: 12px;
+	margin-left: 10px;
+	margin-top: 10px;
+	text-shadow: none;
+	border-radius: 5px;
+	background: #727171;
+}
+button:hover {
+	background: #125287;
+	border-color: #125287;
+	color: #fff;
+	font-weight: bold;
+}
+.btn-excle {
+	display: block;
+	width: 25px;
+	height: 25px;
+	border: none;
+	margin: 10px;
+	cursor: pointer;
+	background: url(images/excel.png) no-repeat;
+}
+.File {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	margin-top: 15px;
+}
+/*本次新增css*/
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.btn-excle:hover {
+	display: block;
+	width: 25px;
+	height: 25px;
+	border: none;
+	margin: 10px;
+	cursor: pointer;
+	background: url(images/excel.png) no-repeat;
+}
+/*Search*/
+#search {
+	padding: 5px 0;
+}
+.textinput {
+	margin: 0;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	border: 1px solid #9e9e9f;
+	border-right: 0px;
+	border-top-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+}
+.button {
+	margin: 0 0 0 -10px;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: solid 1px #9e9e9f;
+	border-right: 0px;
+	background: url(images/search.png) no-repeat 50% 50% #125287;
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+}
+.button:hover {
+	text-decoration: none;
+	background: url(images/search.png) no-repeat 50% 50% #0A91CD;
+}
+	/* Fixes submit button height problem in Firefox */
+	.button::-moz-focus-inner {
+ border: 0;
+}
+.clear {
+	clear: both;
+}
+/*Product Family*/
+.ProductFamily {
+	padding: 5px 0;
+}
+#ProductFamily_text {
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	min-width: 200px;
+	border-radius: 5px 5px;
+}
+#Block_wrapper {
+	padding: 5px 0;
+	/*height: 286px;
+	width: 1141px;*/
+	overflow-y: hidden;
+}
+.Block_scrool {
+	width: 2300px;
+	/*overflow-x: auto;*/
+}
+.Block {
+	float: left;
+	width: 163px;
+}
+.Block_title {
+	width: 155px;
+	padding: 5px 0 5px 10px;
+	color: #ffffff;
+	background: #125287;
+}
+.Block_text {
+	width: 163px;
+	height: 246px;
+	overflow: auto;
+	background: #ffffff;
+	border: 1px solid #898989;
+}
+.Block_text p {
+	text-indent: -25px;
+	padding-left: 25px;
+	display: block;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	margin: 0;
+}
+/*slider_vertical*/
+.Block_slider p {
+	text-indent: -25px;
+	padding-left: 15px;
+	display: block;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	margin: 0;
+}
+.Block_slider {
+	width: 163px;
+	height: 246px;
+	overflow: auto;
+	background: #ffffff;
+	border: 1px solid #898989;
+	text-align: center;
+}
+.slider_text {
+	padding-top: 5px;
+	color: #125287;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+#amount1, #amount2, #amount3, #amount4, #amount5, #amount6, #amount7 {
+	border: 1px solid #898989;
+	width: 100px;
+	color: #125287;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+.slider-vertical_text {
+	float: left;
+	margin-top: 15px;
+	margin-left: 20px;
+	position: relative;
+	height: 190px;
+}
+.slider-vertical_text .top {
+	position: absolute;
+}
+.slider-vertical_text .bottom {
+	position: absolute;
+	bottom: 0px;
+}
+.slider-vertical_text span {
+	color: #125287;
+	font-weight: bold;
+	font-size: 14px;
+	padding-right: 5px;
+}
+#slider-vertical1, #slider-vertical2, #slider-vertical3, #slider-vertical4, #slider-vertical5, #slider-vertical6, #slider-vertical7 {
+	float: left;
+}
+/*ProductTable*/
+.ProductTable {
+	padding: 0 0 30px 50px;
+}
+/*tabs*/
+.SearchTabBox {
+    position: relative;
+	margin-bottom:178px;
+    z-index: 999;
+}
+.SearchTabBox  *{
+	box-sizing: border-box;
+}
+.SearchTabBox .SearchTabHeadings .heading{
+    background: #1D2A56;
+    padding: 10px 15px;
+    border-top-left-radius: 5px;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+}
+.SearchTabBox .SearchTabHeadings .on.heading{
+    background: #0F4E81;
+    z-index: 2;
+}
+.SearchTabBox .SearchTabHeadings .heading .headingRight{
+    border-style: solid;
+    border-width: 0 20px 38px 0;
+    border-color: transparent transparent #1D2A56 transparent;
+    position: absolute;
+    top: 0;
+    right: -20px;
+}
+.SearchTabBox .SearchTabHeadings .on.heading .headingRight{
+    border-color: transparent transparent #0F4E81 transparent;
+}
+.SearchTabBox .SearchTabContents{
+    position: absolute;
+    width: 100%;
+    top: 38px;
+}
+.SearchTabBox .SearchTabContents .content{
+	display: none;
+    background: #0F4E81;
+    padding:15px;
+}
+.SearchTabBox .SearchTabContents .on.content{
+    display: block;
+}
+.SearchTabBox .SearchTabContents .content#ProductLine{
+    overflow: hidden;
+    padding-left: 55px;
+    position: relative;
+}
+.SearchTabBox  .content >*{
+    vertical-align: top;
+}
+.SearchTabBox  .content .ProductLineByn{
+    line-height: 70px;
+    padding: 0 0 0 42px;
+    border: 0;
+    background: transparent no-repeat -5px center;
+    background-size: 42px;
+    color: #fff;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+    text-align: left;
+    outline: none;
+}
+.SearchTabBox  .content .ProductLineByn:hover,
+.SearchTabBox  .content .ProductLineByn.select{
+	color:#ea5514;
+    text-decoration: underline;
+}
+.SearchTabBox  .content .ProductLineByn.mcu{
+    background-image: url(./images/icon/mcu.png);
+    width: 100px;
+}
+.SearchTabBox  .content .ProductLineByn.wireless{
+    background-image: url(./images/icon/wireless.png);
+    width: 110px;
+}
+.SearchTabBox  .content .ProductLineByn.communcation{
+    background-image: url(./images/icon/communcation.png);
+    width: 155px;
+}
+.SearchTabBox  .content .ProductLineByn.power{
+    background-image: url(./images/icon/power.png);
+    width: 185px;
+}
+.SearchTabBox  .content .ProductLineByn.module{
+    background-image: url(./images/icon/module.png);
+    width: 105px;
+}
+.SearchTabBox  .content .ProductLineByn.display{
+    background-image: url(./images/icon/display.png);
+    width: 145px;
+}
+.SearchTabBox  .content .ProductLineByn.memory{
+    background-image: url(./images/icon/memory.png);
+    width: 180px;
+}
+.SearchTabBox  .content .ProductLineByn.analog{
+    background-image: url(./images/icon/analog.png);
+    width: 100px;
+}
+.SearchTabBox  .content .ProductLineByn.video{
+    background-image: url(./images/icon/video.png);
+    width: 110px;
+}
+.SearchTabBox  .content .ProductLineByn.miscellaneous{
+    background-image: url(./images/icon/miscellaneous.png);
+    width: 155px;
+}
+.SearchTabBox  #PartNumber.content  .textinput{
+    width: 400px;
+    border-radius: 0;
+}
+.SearchTabBox  #PartNumber.content  .button{
+    background: url(images/search.png) no-repeat center center #96999E;
+    border-radius: 0;
+    border: 0;
+    height: 28px;
+    padding: 5px 13px;
+}

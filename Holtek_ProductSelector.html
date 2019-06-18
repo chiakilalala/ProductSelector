@@ -1,0 +1,1014 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Holtek Product Selector</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+<script src="jQueryAssets/jquery-1.11.1.min.js"></script>
+<script src="jQueryAssets/jquery.ui-1.10.4.slider.min.js"></script>
+<script src="js/show_hide.js"></script>
+<script src="js/slider_vertical.js"></script>
+<script src="js/jquery.blockUI.js"></script>
+<script src="js/jquery.blockUI_load.js"></script>
+<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
+<link href="Holtek_ProductSelector.css" rel="stylesheet" type="text/css">
+<link href="reveal.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+/*此處CSS用以網站切版示意使用,故不需新增至Liferay */
+body {
+	margin: 0 auto;
+	background-color: #efefef;
+	font-family: Arial, Helvetica, sans-serif, "微軟正黑體";
+	width: 1265px;
+}
+.ProductSelector_wrapper {
+	margin: -5px 0 10px 7px;
+	width: 1250px;
+	/*overflow: auto;*/
+	background: #ffffff;
+	-webkit-box-shadow: 0px 2px 3px #CCC;/*陰影*/
+	-moz-box-shadow: 0px 2px 3px #CCC;
+	box-shadow: 0px 2px 3px #CCC;
+}
+.ProductSelector_bg {
+	margin: 0 0 5px 40px;
+	padding: 15px;
+	width: 1148px;
+	background: #EFEFEF;/*overflow: auto;*/
+}
+.ProductTable_images {
+	margin: 0 0 0 40px;
+}
+.ProductTable_images_page {
+	float: right;
+	padding-right: 30px;
+}
+</style>
+</head>
+<body>
+<!--JPG示意圖--> 
+<img src="images/Holtek_ProductSelector_bg01.jpg" width="1265" height="184" alt=""/>
+<div class="ProductSelector_wrapper"> 
+  <!--ProductSelector內容-->
+  <div class="ProductSelector_bg">
+    <div class="ProductSelector_Search">Search by Part Number
+      <div>
+        <form action="#" method="get" target="_parent" id="search">
+          <input type="text" class="textinput" name="q" size="21" maxlength="120" placeholder="Enter Part Number">
+          <input type="submit" value=" " class="button">
+        </form>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="ProductSelector_Product">Filter by Product Line
+      <div class="ProductFamily">
+        <select id="ProductFamily_text">
+          <option>8-bit MCU</option>
+          <option>32-bit MCU</option>
+          <option>Functional Module</option>
+          <option>Power Management</option>
+          <option>Fingerprint Module</option>
+          <option>Display Driver</option>
+        </select>
+      </div>
+    </div>
+    <!--產品選型-->
+    <div class="Product_Search"> 
+      <!-- show --> 
+      <!--<input type="button" class="show" data-reveal-id="myModal" data-animation="fade" value="Show / Hide Parameters"/>-->
+      <div class="Product_show"> <a href="#" class="show" data-reveal-id="myModal" data-animation="fade"> Show / Hide Parameters </a></div>
+      <div id="myModal" class="reveal-modal">
+        <h1>Show / Hide Parameters</h1>
+        <div class="Parameters">
+          <div class="Visible_Parameters">
+            <div class="Visible_title">Visible Parameters</div>
+            <div class="Visible_text">
+              <div class="show1 white"><a href="#">Application Type</a></div>
+              <div class="show2 blue"><a href="#">MCU Core</a></div>
+              <div class="show3 white"><a href="#">VDD</a></div>
+              <div class="show4 blue"><a href="#">Program Memory</a></div>
+              <div class="show5 white"><a href="#">Data Memory</a></div>
+              <div class="show6 blue"><a href="#">System Clock</a></div>
+              <div class="show7 white"><a href="#">Timer Bit</a></div>
+              <div class="show8 blue"><a href="#">Timer Type</a></div>
+              <div class="show9 white"><a href="#">Number of Timer</a></div>
+              <div class="show10 blue"><a href="#">I/O</a></div>
+              <div class="show11 white"><a href="#">A/D</a></div>
+              <div class="show12 blue"><a href="#">Interface</a></div>
+              <div class="show13 white"><a href="#">Major Features</a></div>
+              <div class="show14 blue"><a href="#">Stack</a></div>
+            </div>
+          </div>
+          <div class="show_hide_icon">Show / Hide<br>
+            <img src="images/show_hide.png" width="25" height="24" alt=""/></div>
+          <div class="Hidden_Parameters">
+            <div class="Hidden_title">Hidden Parameters</div>
+            <div class="Hidden_text">
+              <div class="hide1 white" style="display:none"><a href="#">Application Type</a></div>
+              <div class="hide2 blue" style="display:none"><a href="#">MCU Core</a></div>
+              <div class="hide3 white" style="display:none"><a href="#">VDD</a></div>
+              <div class="hide4 blue" style="display:none"><a href="#">Program Memory</a></div>
+              <div class="hide5 white" style="display:none"><a href="#">Data Memory</a></div>
+              <div class="hide6 blue" style="display:none"><a href="#">System Clock</a></div>
+              <div class="hide7 white" style="display:none"><a href="#">Timer Bit</a></div>
+              <div class="hide8 blue" style="display:none"><a href="#">Timer Type</a></div>
+              <div class="hide9 white" style="display:none"><a href="#">Number of Timer</a></div>
+              <div class="hide10 blue" style="display:none"><a href="#">I/O</a></div>
+              <div class="hide11 white" style="display:none"><a href="#">A/D</a></div>
+              <div class="hide12 blue" style="display:none"><a href="#">Interface</a></div>
+              <div class="hide13 white" style="display:none"><a href="#">Major Features</a></div>
+              <div class="hide14 blue" style="display:none"><a href="#">Stack</a></div>
+            </div>
+          </div>
+          <div style="clear:both;"></div>
+          <div class="apply"><a href="#">Apply Changes</a></div>
+        </div>
+      </div>
+      <!-- Block+hide -->
+      <div id="Block_wrapper">
+        <div class="Block_scrool">
+          <div class="Block1 Block">
+            <div class="Block_title">Application Type
+              <input type="button" class="close1 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                I/O </p>
+              <p>
+                <input type="checkbox">
+                A/D </p>
+              <p>
+                <input type="checkbox">
+                0.9V </p>
+              <p>
+                <input type="checkbox">
+                2.4GHz RF </p>
+              <p>
+                <input type="checkbox">
+                DC Motor </p>
+              <p>
+                <input type="checkbox">
+                Dual Slope </p>
+              <p>
+                <input type="checkbox">
+                e-Banking </p>
+              <p>
+                <input type="checkbox">
+                IR Remote </p>
+              <p>
+                <input type="checkbox">
+                LCD Display </p>
+              <p>
+                <input type="checkbox">
+                OPA </p>
+              <p>
+                <input type="checkbox">
+                Other ASSP </p>
+              <p>
+                <input type="checkbox">
+                Phone </p>
+              <p>
+                <input type="checkbox">
+                R to F </p>
+              <p>
+                <input type="checkbox">
+                Small Package </p>
+              <p>
+                <input type="checkbox">
+                TinyPower </p>
+              <p>
+                <input type="checkbox">
+                Touch Key </p>
+              <p>
+                <input type="checkbox">
+                Two Way Radio </p>
+              <p>
+                <input type="checkbox">
+                USB Interface </p>
+              <p>
+                <input type="checkbox">
+                Voice & Music </p>
+              <p>
+                <input type="checkbox">
+                Wireless Flash Voice </p>
+              <p>
+                <input type="checkbox">
+                RF Remote </p>
+              <p>
+                <input type="checkbox">
+                Sub 1GHz </p>
+              <p>
+                <input type="checkbox">
+                Charger </p>
+              <p>
+                <input type="checkbox">
+                Health Measurement </p>
+              <p>
+                <input type="checkbox">
+                24-bit Delta-Sigma A/D </p>
+              <p>
+                <input type="checkbox">
+                Ultrasonic Park Assist </p>
+              <p>
+                <input type="checkbox">
+                Emergency Light </p>
+              <p>
+                <input type="checkbox">
+                Power Tool Controller </p>
+              <p>
+                <input type="checkbox">
+                Shock Detector </p>
+              <p>
+                <input type="checkbox">
+                Waveform Generator </p>
+              <p>
+                <input type="checkbox">
+                PIR </p>
+              <p>
+                <input type="checkbox">
+                2-Wire comm. </p>
+              <p>
+                <input type="checkbox">
+                Personal Care</p>
+            </div>
+          </div>
+          <div class="Block2 Block">
+            <div class="Block_title">MCU Core
+              <input type="button" class="close2 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                HT-8</p>
+              <p>
+                <input type="checkbox">
+                Cortex-M0+</p>
+              <p>
+                <input type="checkbox">
+                Cortex-M3</p>
+              <p>
+                <input type="checkbox">
+                8051</p>
+            </div>
+          </div>
+          
+          
+          <!-- slider -->
+          
+          <div class="Block3 Block">
+            <div class="Block_title">VDD
+              <input type="button" class="close4 hide" value="X"/>
+            </div>
+            <div class="Block_slider">
+              <p class="slider_text">
+                <label for="amount" >≤</label>
+                <input type="text" name="points" id="amount1">
+              </p>
+              <div class="slider-vertical_text">
+                <div class="top"><span>≤</span>8.0V</div>
+                <div class="bottom"><span>≥</span>1.2V</div>
+              </div>
+              <div id="slider-vertical1"></div>
+            </div>
+          </div>
+          <div class="Block4 Block">
+            <div class="Block_title">Program Memory
+              <input type="button" class="close5 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                0.5K</p>
+              <p>
+                <input type="checkbox">
+                1K</p>
+              <p>
+                <input type="checkbox">
+                2K</p>
+              <p>
+                <input type="checkbox">
+                3K</p>
+              <p>
+                <input type="checkbox">
+                4K</p>
+              <p>
+                <input type="checkbox">
+                6K</p>
+              <p>
+                <input type="checkbox">
+                8K</p>
+              <p>
+                <input type="checkbox">
+                12K</p>
+              <p>
+                <input type="checkbox">
+                16K</p>
+              <p>
+                <input type="checkbox">
+                32K</p>
+              <p>
+                <input type="checkbox">
+                48K</p>
+              <p>
+                <input type="checkbox">
+                64K</p>
+              <p>
+                <input type="checkbox">
+                96K</p>
+              <p>
+                <input type="checkbox">
+                128K</p>
+              <p>
+                <input type="checkbox">
+                192K</p>
+              <p>
+                <input type="checkbox">
+                256K</p>
+              <p>
+                <input type="checkbox">
+                512K</p>
+            </div>
+          </div>
+          <!-- slider
+          
+          <div class="Block5 Block">
+            <div class="Block_title">Program Memory
+              <input type="button" class="close5 hide" value="X"/>
+            </div>
+            <div class="Block_slider">
+              <p class="slider_text">
+                <label for="amount" >≤</label>
+                <input type="text" name="points" id="amount2">
+              </p>
+              <div class="slider-vertical_text">
+                <div class="top"><span>≤</span>512K</div>
+                <div class="bottom"><span>≥</span>0.5K</div>
+              </div>
+              <div id="slider-vertical2"></div>
+            </div>
+          </div>-->
+          
+          <div class="Block5 Block">
+            <div class="Block_title">Data Memory
+              <input type="button" class="close5 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                32</p>
+              <p>
+                <input type="checkbox">
+                48</p>
+              <p>
+                <input type="checkbox">
+                64</p>
+              <p>
+                <input type="checkbox">
+                80</p>
+              <p>
+                <input type="checkbox">
+                88</p>
+              <p>
+                <input type="checkbox">
+                96</p>
+              <p>
+                <input type="checkbox">
+                128</p>
+              <p>
+                <input type="checkbox">
+                160</p>
+              <p>
+                <input type="checkbox">
+                192</p>
+              <p>
+                <input type="checkbox">
+                208</p>
+              <p>
+                <input type="checkbox">
+                216</p>
+              <p>
+                <input type="checkbox">
+                224</p>
+              <p>
+                <input type="checkbox">
+                256</p>
+              <p>
+                <input type="checkbox">
+                280</p>
+              <p>
+                <input type="checkbox">
+                288</p>
+              <p>
+                <input type="checkbox">
+                320</p>
+              <p>
+                <input type="checkbox">
+                352</p>
+              <p>
+                <input type="checkbox">
+                384</p>
+              <p>
+                <input type="checkbox">
+                448</p>
+              <p>
+                <input type="checkbox">
+                512</p>
+              <p>
+                <input type="checkbox">
+                576</p>
+              <p>
+                <input type="checkbox">
+                640</p>
+              <p>
+                <input type="checkbox">
+                768</p>
+              <p>
+                <input type="checkbox">
+                1024</p>
+              <p>
+                <input type="checkbox">
+                1152</p>
+              <p>
+                <input type="checkbox">
+                1280</p>
+              <p>
+                <input type="checkbox">
+                1536</p>
+              <p>
+                <input type="checkbox">
+                2048</p>
+              <p>
+                <input type="checkbox">
+                2112</p>
+              <p>
+                <input type="checkbox">
+                2304</p>
+              <p>
+                <input type="checkbox">
+                3072</p>
+              <p>
+                <input type="checkbox">
+                3840</p>
+              <p>
+                <input type="checkbox">
+                4096</p>
+            </div>
+          </div>
+          
+          <!-- slider
+          
+          <div class="Block7 Block">
+            <div class="Block_title">Data Memory
+              <input type="button" class="close7 hide" value="X"/>
+            </div>
+            <div class="Block_slider">
+              <p class="slider_text">
+                <label for="amount" >≤</label>
+                <input type="text" name="points" id="amount4">
+              </p>
+              <div class="slider-vertical_text">
+                <div class="top"><span>≤</span>4096</div>
+                <div class="bottom"><span>≥</span>32</div>
+              </div>
+              <div id="slider-vertical3"></div>
+            </div>
+          </div>-->
+          
+          <div class="Block6 Block">
+            <div class="Block_title">System Clock
+              <input type="button" class="close6 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                32kHz~128kHz</p>
+              <p>
+                <input type="checkbox">
+                32kHz~4MHz</p>
+              <p>
+                <input type="checkbox">
+                32kHz~8MHz</p>
+              <p>
+                <input type="checkbox">
+                32kHz~12MHz</p>
+              <p>
+                <input type="checkbox">
+                32kHz~16MHz</p>
+              <p>
+                <input type="checkbox">
+                32kHz~20MHz</p>
+              <p>
+                <input type="checkbox">
+                32kHz~25MHz</p>
+              <p>
+                <input type="checkbox">
+                300kHz~4MHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~500kHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~4MHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~4MHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~4095kHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~12MHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~8MHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~8MHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~12MHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~16MHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~20MHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~20MHz</p>
+              <p>
+                <input type="checkbox">
+                400kHz~30MHz</p>
+              <p>
+                <input type="checkbox">
+                470kHz~15MHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                3.68MHz~25MHz</p>
+              <p>
+                <input type="checkbox">
+                1/2/4/8MHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                4MHz</p>
+              <p>
+                <input type="checkbox">
+                4MHz~25MHz</p>
+              <p>
+                <input type="checkbox">
+                6MHzor12MHz</p>
+              <p>
+                <input type="checkbox">
+                6MHz,12MHz or 16MHz</p>
+              <p>
+                <input type="checkbox">
+                8MHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                8MHz~16MHz</p>
+              <p>
+                <input type="checkbox">
+                8MHz</p>
+              <p>
+                <input type="checkbox">
+                12MHz or 32kHz</p>
+              <p>
+                <input type="checkbox">
+                16MHz</p>
+              <p>
+                <input type="checkbox">
+                20MHz</p>
+              <p>
+                <input type="checkbox">
+                RC/Crystal</p>
+            </div>
+          </div>
+          <!-- slider 
+          
+          <div class="Block6 Block">
+            <div class="Block_title">System Clock
+              <input type="button" class="close6 hide" value="X"/>
+            </div>
+            <div class="Block_slider">
+              <p class="slider_text">
+                <label for="amount" >≤</label>
+                <input type="text" name="points" id="amount3">
+              </p>
+              <div class="slider-vertical_text">
+                <div class="top"><span>≤</span>30MHz</div>
+                <div class="bottom"><span>≥</span>32kHz</div>
+              </div>
+              <div id="slider-vertical4"></div>
+            </div>
+          </div>-->
+          
+          <div class="Block7 Block">
+            <div class="Block_title">Timer Bit
+              <input type="button" class="close7 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                8-bit</p>
+              <p>
+                <input type="checkbox">
+                10-bit</p>
+              <p>
+                <input type="checkbox">
+                16-bit</p>
+            </div>
+          </div>
+          <div class="Block8 Block">
+            <div class="Block_title">Timer Type
+              <input type="button" class="close8 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                --</p>
+              <p>
+                <input type="checkbox">
+                CTM</p>
+              <p>
+                <input type="checkbox">
+                ETM</p>
+              <p>
+                <input type="checkbox">
+                PTM</p>
+              <p>
+                <input type="checkbox">
+                STM</p>
+              <p>
+                <input type="checkbox">
+                CAPTM</p>
+              <p>
+                <input type="checkbox">
+                BFTM</p>
+              <p>
+                <input type="checkbox">
+                GPTM</p>
+              <p>
+                <input type="checkbox">
+                MCTM</p>
+              <p>
+                <input type="checkbox">
+                MCTM</p>
+              <p>
+                <input type="checkbox">
+                SCTM</p>
+              <p>
+                <input type="checkbox">
+                RMT</p>
+            </div>
+          </div>
+          
+          <!-- slider -->
+          
+          <div class="Block9 Block">
+            <div class="Block_title">Number of Timer
+              <input type="button" class="close9 hide" value="X"/>
+            </div>
+            <div class="Block_slider">
+              <p class="slider_text">
+                <label for="amount" >≤</label>
+                <input type="text" name="points" id="amount5">
+              </p>
+              <div class="slider-vertical_text">
+                <div class="top"><span>≤</span>5</div>
+                <div class="bottom"><span>≥</span>1</div>
+              </div>
+              <div id="slider-vertical5"></div>
+            </div>
+          </div>
+          
+          <!-- slider -->
+          
+          <div class="Block10 Block">
+            <div class="Block_title"> I/O
+              <input type="button" class="close10 hide" value="X"/>
+            </div>
+            <div class="Block_slider">
+              <p class="slider_text">
+                <label for="amount" >≤</label>
+                <input type="text" name="points" id="amount6">
+              </p>
+              <div class="slider-vertical_text">
+                <div class="top"><span>≤</span>80</div>
+                <div class="bottom"><span>≥</span>4</div>
+              </div>
+              <div id="slider-vertical6"></div>
+            </div>
+          </div>
+          <div class="Block11 Block">
+            <div class="Block_title">A/D
+              <input type="button" class="close11 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                8-bit</p>
+              <p>
+                <input type="checkbox">
+                9-bit</p>
+              <p>
+                <input type="checkbox">
+                10-bit</p>
+              <p>
+                <input type="checkbox">
+                12-bit</p>
+              <p>
+                <input type="checkbox">
+                13-bit</p>
+              <p>
+                <input type="checkbox">
+                16-bit</p>
+              <p>
+                <input type="checkbox">
+                20-bit</p>
+              <p>
+                <input type="checkbox">
+                24-bit</p>
+              <p>
+                <input type="checkbox">
+                8kHz 16-bit</p>
+              <p>
+                <input type="checkbox">
+                16kHz 16-bit</p>
+            </div>
+          </div>
+          <div class="Block12 Block">
+            <div class="Block_title">Interface
+              <input type="button" class="close12 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                --</p>
+              <p>
+                <input type="checkbox">
+                SPI/I²C</p>
+              <p>
+                <input type="checkbox">
+                SPI</p>
+              <p>
+                <input type="checkbox">
+                I²C</p>
+              <p>
+                <input type="checkbox">
+                USB</p>
+              <p>
+                <input type="checkbox">
+                UART</p>
+              <p>
+                <input type="checkbox">
+                ISO7816</p>
+              <p>
+                <input type="checkbox">
+                I²C/UART</p>
+              <p>
+                <input type="checkbox">
+                CCIR601</p>
+              <p>
+                <input type="checkbox">
+                ISO 7816-3</p>
+              <p>
+                <input type="checkbox">
+                SPIA</p>
+              <p>
+                <input type="checkbox">
+                USART</p>
+              <p>
+                <input type="checkbox">
+                BCU</p>
+              <p>
+                <input type="checkbox">
+                SDIO</p>
+              <p>
+                <input type="checkbox">
+                SPI 3-Wire</p>
+              <p>
+                <input type="checkbox">
+                4-Wire</p>
+              <p>
+                <input type="checkbox">
+                SPI, UART</p>
+              <p>
+                <input type="checkbox">
+                SPI, USB</p>
+              <p>
+                <input type="checkbox">
+                USB, I²C</p>
+              <p>
+                <input type="checkbox">
+                USB, SPI</p>
+              <p>
+                <input type="checkbox">
+                USB, UART</p>
+            </div>
+          </div>
+          
+          <div class="Block13 Block">
+            <div class="Block_title">Major Features
+              <input type="button" class="close13 hide" value="X"/>
+            </div>
+            <div class="Block_text">
+              <p>
+                <input type="checkbox">
+                Color Image Signal Processor</p>
+              <p>
+                <input type="checkbox">
+                TV Encoder </p>
+              <p>
+                <input type="checkbox">
+                Video DAC </p>
+              <p>
+                <input type="checkbox">
+                Video Amplifier </p>
+              <p>
+                <input type="checkbox">
+                CCIR656 Encoder </p>
+              <p>
+                <input type="checkbox">
+                OSD </p>
+              <p>
+                <input type="checkbox">
+                IAP </p>
+              <p>
+                <input type="checkbox">
+                ISP </p>
+              <p>
+                <input type="checkbox">
+                ICP </p>
+              <p>
+                <input type="checkbox">
+                EEPROM </p>
+              <p>
+                <input type="checkbox">
+                SRAM </p>
+              <p>
+                <input type="checkbox">
+                A/D </p>
+              <p>
+                <input type="checkbox">
+                D/A </p>
+              <p>
+                <input type="checkbox">
+                LCD </p>
+              <p>
+                <input type="checkbox">
+                LED</p>
+              <p>
+                <input type="checkbox">
+                Timer Module </p>
+              <p>
+                <input type="checkbox">
+                PWM </p>
+              <p>
+                <input type="checkbox">
+                I²C </p>
+              <p>
+                <input type="checkbox">
+                SPI </p>
+              <p>
+                <input type="checkbox">
+                SCI </p>
+              <p>
+                <input type="checkbox">
+                I²S </p>
+              <p>
+                <input type="checkbox">
+                1-Wire </p>
+              <p>
+                <input type="checkbox">
+                2-Wire </p>
+              <p>
+                <input type="checkbox">
+                UART </p>
+              <p>
+                <input type="checkbox">
+                USB </p>
+              <p>
+                <input type="checkbox">
+                RTC </p>
+              <p>
+                <input type="checkbox">
+                SCOM </p>
+              <p>
+                <input type="checkbox">
+                OCP </p>
+              <p>
+                <input type="checkbox">
+                OUVP </p>
+              <p>
+                <input type="checkbox">
+                OPA </p>
+              <p>
+                <input type="checkbox">
+                CMP </p>
+              <p>
+                <input type="checkbox">
+                DC/DC </p>
+              <p>
+                <input type="checkbox">
+                LDO </p>
+              <p>
+                <input type="checkbox">
+                RF </p>
+              <p>
+                <input type="checkbox">
+                HV </p>
+              <p>
+                <input type="checkbox">
+                PA </p>
+              <p>
+                <input type="checkbox">
+                R-F </p>
+              <p>
+                <input type="checkbox">
+                PLL </p>
+              <p>
+                <input type="checkbox">
+                Temp.Sensor </p>
+              <p>
+                <input type="checkbox">
+                USART </p>
+              <p>
+                <input type="checkbox">
+                EBI </p>
+              <p>
+                <input type="checkbox">
+                WDT </p>
+              <p>
+                <input type="checkbox">
+                Time Base </p>
+              <p>
+                <input type="checkbox">
+                ISO-7816-3 </p>
+              <p>
+                <input type="checkbox">
+                Charge Pump </p>
+              <p>
+                <input type="checkbox">
+                PGA</p>
+              <p>
+                <input type="checkbox">
+                PFD</p>
+            </div>
+          </div>
+          
+          <!-- slider -->
+          
+          <div class="Block14 Block">
+            <div class="Block_title"> Stack
+              <input type="button" class="close14 hide" value="X"/>
+            </div>
+            <div class="Block_slider">
+              <p class="slider_text">
+                <label for="amount" >≤</label>
+                <input type="text" name="points" id="amount7">
+              </p>
+              <div class="slider-vertical_text">
+                <div class="top"><span>≤</span>10</div>
+                <div class="bottom"><span>≥</span>1</div>
+              </div>
+              <div id="slider-vertical7"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <button type="button" class="butn-blue left" id="Find_load">Find</button>
+    <button type="button" class="butn-red left" id="Reset_load">Reset</button>
+    <div id="domMessage" style="display:none;">
+      <div id="tallContent" style="cursor: default; display: none;">
+        <h1><img src="images/icon-loading.gif" width="100" height="76" alt=""/></h1>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="excle">
+      <button class="btn-excle left"></button>
+      <div class="File left"> <span><b>Total Products:</b></span>&nbsp;&nbsp;710 &nbsp;&nbsp;&nbsp;&nbsp;<span><b>Matching Results:</b></span>&nbsp;&nbsp;0 </div>
+    </div>
+    <!--bg-->
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both; padding-bottom:20px;"></div>
+  <div class="ProductTable" style="display:none;">
+    <button type="button" class="butn-blue left">Compare</button>
+    <button type="button" class="butn-red left">Reset Compare</button>
+  </div>
+  <!--選行表格頁碼JPG示意圖-->
+  <div class="ProductTable_images_page" style="display:none;"><img src="images/ProductTable_images_page.jpg" width="194" height="20" alt=""/></div>
+  <!--選行表格JPG示意圖-->
+  <div class="ProductTable_images" style="display:none;"><img src="images/Holtek_ProductSelector_bg03.jpg" width="1181" height="962" alt=""/></div>
+</div>
+<!--JPG示意圖--> 
+<img src="images/Holtek_ProductSelector_bg02.jpg" width="1265" height="72" alt=""/>
+</body>
+</html>

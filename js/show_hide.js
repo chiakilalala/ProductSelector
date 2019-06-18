@@ -1,0 +1,243 @@
+$(document).ready(function(){
+  $(".close1").click(function(){
+  $(".Block1").hide();
+  $(".show1").hide();
+  $(".hide1").show();
+  });
+  $(".hide1").click(function(){
+  $(".Block1").show();
+  $(".show1").show();
+  $(".hide1").hide();
+  });
+  $(".show1").click(function(){
+  $(".Block1").hide();
+  $(".hide1").show();
+  $(".show1").hide();
+  });
+  
+$(".close2").click(function(){
+  $(".Block2").hide();
+  $(".show2").hide();
+  $(".hide2").show();
+  });
+  $(".hide2").click(function(){
+  $(".Block2").show();
+  $(".show2").show();
+  $(".hide2").hide();
+  });
+  $(".show2").click(function(){
+  $(".Block2").hide();
+  $(".hide2").show();
+  $(".show2").hide();
+  });
+  
+  $(".close3").click(function(){
+  $(".Block3").hide();
+  $(".show3").hide();
+  $(".hide3").show();
+  });
+  $(".hide3").click(function(){
+  $(".Block3").show();
+  $(".show3").show();
+  $(".hide3").hide();
+  });
+  $(".show3").click(function(){
+  $(".Block3").hide();
+  $(".hide3").show();
+  $(".show3").hide();
+  });
+  
+  $(".close4").click(function(){
+  $(".Block4").hide();
+  $(".show4").hide();
+  $(".hide4").show();
+  });
+  $(".hide4").click(function(){
+  $(".Block4").show();
+  $(".show4").show();
+  $(".hide4").hide();
+  });
+  $(".show4").click(function(){
+  $(".Block4").hide();
+  $(".hide4").show();
+  $(".show4").hide();
+  });
+  
+  $(".close5").click(function(){
+  $(".Block5").hide();
+  $(".show5").hide();
+  $(".hide5").show();
+  });
+  $(".hide5").click(function(){
+  $(".Block5").show();
+  $(".show5").show();
+  $(".hide5").hide();
+  });
+  $(".show5").click(function(){
+  $(".Block5").hide();
+  $(".hide5").show();
+  $(".show5").hide();
+  });
+  
+  $(".close6").click(function(){
+  $(".Block6").hide();
+  $(".show6").hide();
+  $(".hide6").show();
+  });
+  $(".hide6").click(function(){
+  $(".Block6").show();
+  $(".show6").show();
+  $(".hide6").hide();
+  });
+  $(".show6").click(function(){
+  $(".Block6").hide();
+  $(".hide6").show();
+  $(".show6").hide();
+  });
+  
+  $(".close7").click(function(){
+  $(".Block7").hide();
+  $(".show7").hide();
+  $(".hide7").show();
+  });
+  $(".hide7").click(function(){
+  $(".Block7").show();
+  $(".show7").show();
+  $(".hide7").hide();
+  });
+  $(".show7").click(function(){
+  $(".Block7").hide();
+  $(".hide7").show();
+  $(".show7").hide();
+  });
+  
+  $(".close8").click(function(){
+  $(".Block8").hide();
+  $(".show8").hide();
+  $(".hide8").show();
+  });
+  $(".hide8").click(function(){
+  $(".Block8").show();
+  $(".show8").show();
+  $(".hide8").hide();
+  });
+  $(".show8").click(function(){
+  $(".Block8").hide();
+  $(".hide8").show();
+  $(".show8").hide();
+  });
+  
+  $(".close9").click(function(){
+  $(".Block9").hide();
+  $(".show9").hide();
+  $(".hide9").show();
+  });
+  $(".hide9").click(function(){
+  $(".Block9").show();
+  $(".show9").show();
+  $(".hide9").hide();
+  });
+  $(".show9").click(function(){
+  $(".Block9").hide();
+  $(".hide9").show();
+  $(".show9").hide();
+  });
+  
+  $(".close10").click(function(){
+  $(".Block10").hide();
+  $(".show10").hide();
+  $(".hide10").show();
+  });
+  $(".hide10").click(function(){
+  $(".Block10").show();
+  $(".show10").show();
+  $(".hide10").hide();
+  });
+  $(".show10").click(function(){
+  $(".Block10").hide();
+  $(".hide10").show();
+  $(".show10").hide();
+  });
+  
+  $(".close11").click(function(){
+  $(".Block11").hide();
+  $(".show11").hide();
+  $(".hide11").show();
+  });
+  $(".hide11").click(function(){
+  $(".Block11").show();
+  $(".show11").show();
+  $(".hide11").hide();
+  });
+  $(".show11").click(function(){
+  $(".Block11").hide();
+  $(".hide11").show();
+  $(".show11").hide();
+  });
+  
+  $(".close12").click(function(){
+  $(".Block12").hide();
+  $(".show12").hide();
+  $(".hide12").show();
+  });
+  $(".hide12").click(function(){
+  $(".Block12").show();
+  $(".show12").show();
+  $(".hide12").hide();
+  });
+  $(".show12").click(function(){
+  $(".Block12").hide();
+  $(".hide12").show();
+  $(".show12").hide();
+  });
+  
+  $(".close13").click(function(){
+  $(".Block13").hide();
+  $(".show13").hide();
+  $(".hide13").show();
+  });
+  $(".hide13").click(function(){
+  $(".Block13").show();
+  $(".show13").show();
+  $(".hide13").hide();
+  });
+  $(".show13").click(function(){
+  $(".Block13").hide();
+  $(".hide13").show();
+  $(".show13").hide();
+  });
+  
+  $(".close14").click(function(){
+  $(".Block14").hide();
+  $(".show14").hide();
+  $(".hide14").show();
+  });
+  $(".hide14").click(function(){
+  $(".Block14").show();
+  $(".show14").show();
+  $(".hide14").hide();
+  });
+  $(".show14").click(function(){
+  $(".Block14").hide();
+  $(".hide14").show();
+  $(".show14").hide();
+  });
+
+  
+});
+
+
+
+
+/*
+var Block_title = document.getElementsByClassName("Block_title");
+function doHide(hide) {
+
+$(hide.parentNode.parentNode).hide();
+}
+
+$(document).ready(function(){
+$(".show").click(function(){
+  $(".Block").show();
+  });
+});*/
